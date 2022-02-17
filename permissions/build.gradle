@@ -1,4 +1,8 @@
 apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
+
+group = 'com.github.lufinima'
+version = '3.8'
 
 ext {
     bintrayRepo = 'android'
