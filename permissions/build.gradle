@@ -40,6 +40,25 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 }
 
+// Because the components are created only during the afterEvaluate phase, you must
+// configure your publications using the afterEvaluate() lifecycle method.
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                // Applies the component for the release build variant.
+                from components.release
+
+                // You can then customize attributes of the publication as shown below.
+                groupId = 'com.github.lufinima'
+                artifactId = 'Android-Permissions'
+                version = '3.8'
+            }
+        }
+    }
+}
+
 // Uncomment following two lines only during publishing.
 // apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
 // apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
