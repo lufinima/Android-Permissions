@@ -29,12 +29,12 @@ ext {
 }
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 31
 
     defaultConfig {
         //noinspection MinSdkTooLow
-        minSdkVersion 1
-        targetSdkVersion 27
+        minSdkVersion 16
+        targetSdkVersion 31
         versionCode 3
         versionName "$libraryVersion"
     }
